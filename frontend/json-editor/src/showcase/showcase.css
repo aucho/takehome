@@ -1,0 +1,21 @@
+.showcase{
+  /* border: 1px solid #666; */
+  box-shadow: 0 0 3px #aaa;
+  padding: 10px;
+  background-color: #f7f7f7;
+}
+
+.top{
+  height: 50px;
+  border-bottom: 1px solid #aaa;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.tree{
+  height: 600px;
+  overflow: auto;
+  z-index: -1;
+}

@@ -1,0 +1,135 @@
+.tree-node{
+  margin-left: 30px;
+  border-left: 1px dashed #666;
+}
+
+.key-val-pair{
+  min-width: 160px;
+  height: 50px;
+  margin: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+  box-shadow: 0 3px 4px 0 #aaa;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.key-val-pair.empty-line{
+  opacity: linear;
+  justify-content: flex-end;
+  box-shadow: 0 3px 4px 0 #aaa;
+}
+.empty-line:hover{
+  background-color: #f5f5f5;
+}
+.empty-line:hover .edit-node{
+  background-color: #f00;
+}
+
+.clickable{
+  cursor: pointer;
+}
+.clickable:hover{
+  background-color: #f5f5f5;
+}
+
+/* .key-val-pair:hover{
+  background-color: #eeeeff;
+} */
+
+.first-obj{
+  width: 260px;
+}
+.first-obj .key{
+  opacity: 0.5;
+}
+
+.key{
+  min-width: 30px;
+  padding: 3px 10px;
+  margin: 20px 10px 20px 20px;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #f54;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.array-key{
+  opacity: 0.5;
+  cursor: default;
+}
+
+.subscript{
+  font-size: 13px;
+  padding: 2px;
+  /* color: #fff; */
+  margin-left: -6px;
+  border-radius: 4px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.value{
+  display: inline-block;
+  flex: 1;
+  margin-right: 20px;
+  padding-left: 20px;
+  line-height: 30px;
+  background-color: #f0f0f0;
+  color: #666;
+  font-weight: 600;
+}
+
+.edit-node{
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  margin: 0 10px;
+  width: 22px;
+  height: 22px;
+  background-color: #666;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}
+.edit-node .remove{
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  margin-left: -5px;
+}
+
+.edit-node:hover{
+  background-color: #f00;
+}
+
+.value-type{
+  display: inline-block;
+  color: #fff;
+  appearance: none;
+  background-color: #666;
+  width: 67px;
+  height: 24px;
+  padding: 2px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  text-align-last: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.value-type option{
+  font-weight: 700;
+}
+

@@ -76,7 +76,8 @@ class TreeNode extends React.Component {
   /**
    * 点击其他地方（onblur触发）向上传递 更新临时数据
    */
-  cancleEdit = (e,keys,isKey)=>{
+  cancleEdit = (e,keys,isKey,valueType="string")=>{
+    console.log(valueType)
     let operationData={
       keys,
     };
@@ -87,12 +88,18 @@ class TreeNode extends React.Component {
       operationData.operation = "changeKey";
     }
     else{
-      operationData.newValue = e.target.innerText;
+      operationData.newValue = this.changeType(e.target.innerText,"string",valueType);
       operationData.operation = "changeValue";
+      if (valueType==="boolean")
+        e.target.innerHtml = operationData.newValue?"[true]":"[false]";
+      else if (valueType==="null")
+        e.target.innerHtml = "[null]"
+      else
+        e.target.innerHtml = operationData.newValue || '';
     }
-    console.log(operationData);
     this.props.onTreeUpdate(operationData);
   }
+
   /**
    * 编辑该条数据
    */
@@ -117,10 +124,11 @@ class TreeNode extends React.Component {
  * 数据类型转换
  */
 changeType = (data,curType,newType)=>{
+  if (curType===newType) return data;
   switch(newType){
     case 'null': return null;
     case 'boolean': return Boolean(data);
-    case 'number': return Number(data);
+    case 'number': return parseFloat(data);
     case 'string': 
       if (curType==='array'||curType==='object'){
         return JSON.stringify(data);
@@ -180,7 +188,6 @@ changeType = (data,curType,newType)=>{
     const valueType = this.valueType(value);
     let isFirstObj = false,
     isEmptyLine = false;
-
     // 对于第一个treeNode
     if (!keyName && !fatherKeys && value) {
       keyName = isObject;
@@ -216,7 +223,10 @@ changeType = (data,curType,newType)=>{
               <div className="value" 
                 suppressContentEditableWarning
                 contentEditable
-                onBlur={(e)=>{this.cancleEdit(e,newKeys,false)}}>{value}</div>
+                onBlur={(e)=>{this.cancleEdit(e,newKeys,false,valueType)}}>
+                  {(()=>{console.log(value)})()}
+                {valueType==="boolean"?(value?"[true]":"[false]"):value}
+              </div>
             }
             <div style={{display:"flex", alignItems:"center"}}>
               {/* 显示数据类型和改变数据 */}

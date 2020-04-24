@@ -8,7 +8,7 @@ export class App extends Component {
     super(props)
     this.state = {
       entryData: '["hello",{"apple":1},{"banana":["ba","na",1]}]', // 给entry的数据 赋个初值
-      treeData: [] // 给showcase的数据 上面的字符串版本
+      treeData: [] // 给showcase的数据
     }
   }
 
@@ -31,6 +31,7 @@ export class App extends Component {
       this.setState({
         treeData
       })
+      this.updateEntryData(treeData);
     }
     catch(e){
       alert("数据格式错误，请检查")

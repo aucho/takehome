@@ -77,7 +77,7 @@ class TreeNode extends React.Component {
    * 点击其他地方（onblur触发）向上传递 更新临时数据
    */
   cancleEdit = (e,keys,isKey,valueType="string")=>{
-    console.log(valueType)
+    // console.log(valueType)
     let operationData={
       keys,
     };

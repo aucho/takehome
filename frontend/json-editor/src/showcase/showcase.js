@@ -26,7 +26,7 @@ class Showcase extends React.Component {
   
   UNSAFE_componentWillReceiveProps(nextProps){
     if (JSON.stringify(this.props.data)!== JSON.stringify(nextProps.data)){
-      console.log('exe')
+      // console.log('exe')
       const treeData = JSON.parse(JSON.stringify(nextProps.data||{}));
       this.setState({
         treeData
@@ -82,7 +82,7 @@ class Showcase extends React.Component {
       }
       // 删除
       if(operation==="delete"){
-        console.log(data[keys[0]]);
+        // console.log(data[keys[0]]);
         delete data[keys[0]];
       }
       // 添加
@@ -152,7 +152,7 @@ class Showcase extends React.Component {
   }
 
   updateToEntry=()=>{
-    console.log("a")
+    // console.log("a")
     this.props.updateData(this.state.treeData)
   }
 

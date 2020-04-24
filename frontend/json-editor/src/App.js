@@ -14,7 +14,7 @@ export class App extends Component {
 
   updateEntryData = treeData=>{
     try{
-      console.log(treeData);
+      //console.log(treeData);
       const entryData = JSON.stringify(treeData)
       this.setState({
         entryData,

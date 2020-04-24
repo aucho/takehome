@@ -91,11 +91,11 @@ class TreeNode extends React.Component {
       operationData.newValue = this.changeType(e.target.innerText,"string",valueType);
       operationData.operation = "changeValue";
       if (valueType==="boolean")
-        e.target.innerHtml = operationData.newValue?"[true]":"[false]";
+        e.target.innerText = operationData.newValue?"[true]":"[false]";
       else if (valueType==="null")
-        e.target.innerHtml = "[null]"
+        e.target.innerText = "[null]"
       else
-        e.target.innerHtml = operationData.newValue || '';
+        e.target.innerText = operationData.newValue || '';
     }
     this.props.onTreeUpdate(operationData);
   }
@@ -224,7 +224,6 @@ changeType = (data,curType,newType)=>{
                 suppressContentEditableWarning
                 contentEditable
                 onBlur={(e)=>{this.cancleEdit(e,newKeys,false,valueType)}}>
-                  {(()=>{console.log(value)})()}
                 {valueType==="boolean"?(value?"[true]":"[false]"):value}
               </div>
             }

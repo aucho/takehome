@@ -2,17 +2,41 @@
 
 ## JSON 编辑器
 
-试着开发一个简单的 JSON 编辑器，具备如下功能：
+## Project setup
+```
+npm install
+```
 
-- 可以解析用户输入的 JSON 文本
-- 友好地展示解析后的 JSON 数据
-- 可以让用户编辑解析后的数据
-- 编辑能力需尽可能完善，包括但不限于改变类型、增减字段等
-- 随着用户编辑适时更新 JSON 文本，便于用户取用
-- 根据你的理解，适当增加提升用户体验的功能并使界面简洁美观
+### Compiles and hot-reloads for development
+```
+npm run start
+```
 
-任务代码模版存于 `json-editor` 文件夹下。你可以本地运行项目，或[通过在线编辑器快速开始](https://codesandbox.io/s/json-editor-3ftfc)。
+### Compiles and minifies for production
+```
+npm run build
+```
 
-完成后请将你的仓库地址或在线编辑器地址告诉我们。
+### Run your tests
+```
+npm run test
+```
+### structure
 
-Good luck!
+```js
++-- build/                      ---打包的文件目录
++-- node_modules/               ---npm下载文件目录
++-- public/                                 
+|   --- favicon.ico							    ---站点ico文件
+|   --- index.html							    ---首页入口html文件
++-- src/                        ---核心代码目录
+|   +-- entry                       ---文本框组件
+|   |    --- entry.js
+|   +-- showcase                    ---树形展示组件
+|   |    --- showcase.js
+|   |    --- component
+|   |    ...            
+|   --- index.js                            ---js入口文件
+|   --- Help.js                             
+|   --- App.js               
+--- package.json                            ---依赖库配置文件

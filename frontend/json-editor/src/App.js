@@ -1,40 +1,41 @@
 import React, { Component } from "react";
-import Showcase from "./showcase/showcase"
-import Entry from "./entry/entry"
+import Showcase from "./showcase/showcase";
+import Entry from "./entry/entry";
 import "./styles.css";
 
 export class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      entryData: '["hello",{"apple":1},{"banana":["ba","na",1]}]', // 给entry的数据 赋个初值
-      treeData: [] // 给showcase的数据
+      // 给entry的数据 赋个初值
+      entryData: '["hello",{"apple":1},{"banana":["ba","na",1]}]', 
+      // 给showcase的数据
+      treeData: [],
     }
   }
 
   updateEntryData = treeData=>{
     try{
-      //console.log(treeData);
-      const entryData = JSON.stringify(treeData)
+      const entryData = JSON.stringify(treeData);
       this.setState({
         entryData,
       })
     }
     catch(e){
-      alert("Somthing wrong occured, what have you done?")
+      alert("Somthing wrong occured, what have you done?");
     }
   }
 
   updateTreeData = entryData=>{
     try{
-      const treeData = JSON.parse(entryData)
+      const treeData = JSON.parse(entryData);
       this.setState({
-        treeData
-      })
+        treeData,
+      });
       this.updateEntryData(treeData);
     }
     catch(e){
-      alert("数据格式错误，请检查")
+      alert("数据格式错误，请检查");
     }
   }
 

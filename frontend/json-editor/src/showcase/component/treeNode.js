@@ -109,7 +109,7 @@ class TreeNode extends React.Component {
     let newValue = null;
     if (operation==="changeType"){
       newValue=this.changeType(value,valueType,e.target.value);
-      operation = "changeValue"
+      operation = "changeValue";
     }
     this.props.onTreeUpdate({
       keys,
@@ -144,7 +144,7 @@ changeType = (data,curType,newType)=>{
         try{
           tempArr = JSON.parse(data)
           if (!Array.isArray(tempArr))
-            tempArr = []
+            tempArr = [];
         }
         catch(e){}
       }
@@ -158,11 +158,11 @@ changeType = (data,curType,newType)=>{
         });
       if (curType==='string'){
         try{
-          temp = JSON.parse(data)
+          temp = JSON.parse(data);
           if (Array.isArray(temp))
-            temp = {}
+            temp = {};
         }
-        catch(e){}
+        catch(e){};
       }
       return temp;
     }
@@ -175,14 +175,14 @@ changeType = (data,curType,newType)=>{
    * 将子组件的的cancleEdit传到上一级
    */
   updateTreeData = (operationData)=>{
-    this.props.onTreeUpdate(operationData)
+    this.props.onTreeUpdate(operationData);
   }
 
 
   render(){
     let { keyName, value, fatherKeys, fatherType } = this.props;
     const { displayChild, colors } = this.state;
-    let options = ['array','object','string','number','boolean','null']
+    let options = ['array','object','string','number','boolean','null'];
     // 类型判断 特殊判断
     const isObject = this.isObject(value);
     const valueType = this.valueType(value);
